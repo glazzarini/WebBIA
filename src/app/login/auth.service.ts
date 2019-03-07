@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private usuarioAutenticado: boolean = false;
+  usuarioAutenticado: boolean = false;
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
   constructor(private router: Router) { }
@@ -18,13 +18,40 @@ export class AuthService {
     {
       this.usuarioAutenticado = true;
       this.mostrarMenuEmitter.emit(true);
-      
+
+      localStorage.setItem('ls-usuarioAutenticado', 'LOG');
+
       this.router.navigate(['/']);
     }
     else
     {
       this.usuarioAutenticado = false;
-      this.mostrarMenuEmitter.emit(false);    
+      this.mostrarMenuEmitter.emit(false);
+
+      localStorage.setItem('ls-usuarioAutenticado', 'DESLOG');
+
+      alert('Usuário ou senha inálidos!');
     }
+  }
+
+  usuarioEstaAutenticado()
+  {
+    console.log(localStorage['ls-usuarioAutenticado']);
+
+    if(localStorage['ls-usuarioAutenticado'] == 'LOG')
+    {
+      this.mostrarMenuEmitter.emit(true);
+      return true;
+    }
+    else
+    {
+      this.mostrarMenuEmitter.emit(false);
+      return false;
+    }
+  }
+
+  deslogarUsuario()
+  {
+    localStorage.setItem('ls-usuarioAutenticado', 'DESLOG');
   }
 }

@@ -18,7 +18,5 @@ export class AppComponent
       this.authService.mostrarMenuEmitter.subscribe(
         mostrar => this.mostrarMenu = mostrar
       );
-
-      console.log("Este é o status: " + this.mostrarMenu);
   }
 }

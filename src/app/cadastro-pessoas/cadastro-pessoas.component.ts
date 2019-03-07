@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../login/auth.service';
 
 @Component({
   selector: 'app-cadastro-pessoas',
@@ -8,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class CadastroPessoasComponent implements OnInit {
 
   cursos: string[] = [];
+  mostrarMenu: boolean = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() 
   {
-      this.cursos.length
+    this.authService.mostrarMenuEmitter.subscribe(
+      mostrar => this.mostrarMenu = mostrar
+    );
   }
 }

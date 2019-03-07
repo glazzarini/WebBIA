@@ -1,3 +1,5 @@
+import { NgModule } from '@angular/core';
+
 import { AuthGuard } from './guards/auth.guard.service';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
@@ -6,14 +8,15 @@ import { LogoffComponent } from './logoff/logoff.component';
 import { CadastroPessoasComponent } from './cadastro-pessoas/cadastro-pessoas.component';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 
-const APP_ROUTES: Routes = [
+const appRoutes: Routes = [
     { 
         path: 'cadastro-pessoas', 
-        component: CadastroPessoasComponent
+        component: CadastroPessoasComponent,
+        canActivate: [AuthGuard]
     },    
     { 
         path: 'login', 
-        component: LoginComponent 
+        component: LoginComponent
     },
     { 
         path: 'logoff', 
@@ -21,8 +24,13 @@ const APP_ROUTES: Routes = [
     },
     { 
         path: '', 
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard]
     }
 ];
 
-export const routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
+@NgModule({
+    imports: [RouterModule.forRoot(appRoutes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule {}
