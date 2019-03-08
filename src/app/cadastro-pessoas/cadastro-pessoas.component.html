@@ -1,72 +1,107 @@
 <div class="container">
 
-  <div class="col-md-8 order-md-1">
-    <h4 class="mb-3">Novo Cliente</h4>
+    <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Novo Cliente</h4>
 
-    <form class="needs-validation" novalidate>
-        
-      <div class="row">
-            <div class="col-md-6 mb-3">
-                <label for="txtNome">Nome:</label>
-                <input type="text" class="form-control" id="txtNome" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Digite um Nome válido.
+        <form class="needs-validation" novalidate>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="txtNome">Nome:</label>
+                    <input type="text" class="form-control" id="txtNome" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Digite um Nome válido.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="txtTelefone">Telefone:</label>
+                    <input type="text" class="form-control" id="txtTelefone" placeholder="(**)*****-****" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        Informe o número de Telefone.
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-3">
-                <label for="txtTelefone">Telefone:</label>
-                <input type="text" class="form-control" id="txtTelefone" placeholder="(**)*****-****" value="" required>
-                <div class="invalid-feedback">
-                  Informe o número de Telefone.
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="txtEndereco">Endereço:</label>
+                    <input type="text" class="form-control" id="txtEndereco" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Informe o Endereço.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <label for="txtEndereco">Endereço:</label>
-                <input type="text" class="form-control" id="txtEndereco" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Informe o Endereço.
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="txtCEP">CEP:</label>
+                    <input type="text" class="form-control" id="txtCEP" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Informe o CEP.
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <button class="btn btn-primary btn-block" type="submit">Buscar</button>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-10 mb-3">
-                <label for="txtEmail">E-mail:</label>
-                <input type="text" class="form-control" id="txtEmail" placeholder="seuemail@exemplo.com" value="" required>
-                <div class="invalid-feedback">
-                  Informe um E-mail válido.
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="txtBairro">Bairro:</label>
+                    <input type="text" class="form-control" id="txtBairro" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Digite o Bairro.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="txtEstado">Estado:</label>
+                    <input type="text" class="form-control" id="txtEstado" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Informe o Estado.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label for="txtRG">RG:</label>
-                <input type="text" class="form-control" id="txtRG" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Digite um Nome válido.
+            <div class="row">
+                <div class="col-md-10 mb-3">
+                    <label for="txtEmail">E-mail:</label>
+                    <input type="text" class="form-control" id="txtEmail" placeholder="seuemail@exemplo.com" value=""
+                        required>
+                    <div class="invalid-feedback">
+                        Informe um E-mail válido.
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-3">
-                <label for="txtCPF">CPF:</label>
-                <input type="text" class="form-control" id="txtCPF" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Informe o número de Telefone.
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="txtRG">RG:</label>
+                    <input type="text" class="form-control" id="txtRG" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Digite um Nome válido.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="txtCPF">CPF:</label>
+                    <input type="text" class="form-control" id="txtCPF" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                        Informe o número de Telefone.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class='col-sm-6'>
-                <p-calendar-ptbr [yearNavigator]="true" yearRange="1900:2018" [monthNavigator]="true"></p-calendar-ptbr>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+
+                    <label for="cldDataNasc">Data de Nascimento:</label>
+                    <p-calendar-ptbr id="cldDataNasc" [yearNavigator]="true" [monthNavigator]="true" yearRange="1900:2018"></p-calendar-ptbr>
+
+                </div>
             </div>
-        </div>
 
-    </form>
+        </form>
 
-  </div>
+    </div>
 
 </div>
