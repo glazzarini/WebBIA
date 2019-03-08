@@ -10,6 +10,7 @@ import { CadastroPessoasComponent } from './cadastro-pessoas/cadastro-pessoas.co
 import { BrowserModule } from '@angular/platform-browser';
 import { AuthService } from './login/auth.service';
 import { LogoffComponent } from './logoff/logoff.component';
+import { PCalendarPtbrModule } from 'p-calendar-ptbr';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LogoffComponent } from './logoff/logoff.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    PCalendarPtbrModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
