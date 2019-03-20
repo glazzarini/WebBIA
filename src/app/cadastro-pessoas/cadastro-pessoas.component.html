@@ -41,7 +41,7 @@
                         Informe o CEP.
                     </div>
                 </div>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4 mb-3 btnBuscar">
                     <button class="btn btn-primary btn-block" type="submit">Buscar</button>
                 </div>
             </div>
@@ -93,11 +93,51 @@
 
             <div class="row">
                 <div class="col-md-6 mb-3">
-
                     <label for="cldDataNasc">Data de Nascimento:</label>
                     <p-calendar-ptbr id="cldDataNasc" [yearNavigator]="true" [monthNavigator]="true" yearRange="1900:2018"></p-calendar-ptbr>
-
                 </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label for="cboTamanhoVestido">Tamanho Vestido:</label>
+                    <select class="custom-select d-block w-100" id="cboTamanhoVestido" required>
+                        <option value="">Selecione...</option>
+                        <option>36</option>
+                        <option>38</option>
+                        <option>40</option>
+                        <option>42</option>
+                        <option>44</option>                                                
+                    </select>
+                </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="cboTamanhoSandalia">Tamanho Sandália:</label>
+                    <select class="custom-select d-block w-100" id="cboTamanhoSandalia" required>
+                        <option value="">Selecione...</option>
+                        <option>36</option>
+                        <option>38</option>
+                        <option>40</option>
+                        <option>42</option>
+                        <option>44</option>                                                
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <label for="exampleFormControlTextarea1">Obsevações:</label>
+                    <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10"></textarea>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="same-address">
+                        <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                    </div>
+                </div>            
             </div>
 
         </form>
