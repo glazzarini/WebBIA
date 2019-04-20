@@ -1,6 +1,10 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Usuario } from './usuario';
 import { Router } from '@angular/router';
+import { HttpClient } from "@angular/common/http";
+import { tap } from 'rxjs/operators';
+import { Login } from './login';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +13,14 @@ export class AuthService {
 
   usuarioAutenticado: boolean = false;
   mostrarMenuEmitter = new EventEmitter<boolean>();
+  list: Login[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
+
+  getAll()
+  {
+    return this.http.get<Login[]>(environment.API + '/login/PesMetros/2').pipe(tap(console.log));
+  }
 
   fazerLogin(usuario: Usuario)
   {

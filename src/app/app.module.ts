@@ -2,6 +2,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { AuthGuard } from './guards/auth.guard.service';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -23,6 +24,7 @@ import { PCalendarPtbrModule } from 'p-calendar-ptbr';
   imports: [
     FormsModule,
     HttpModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserModule,
     PCalendarPtbrModule
